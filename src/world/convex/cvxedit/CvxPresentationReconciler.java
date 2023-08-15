@@ -20,6 +20,8 @@ public class CvxPresentationReconciler extends PresentationReconciler {
 
     private final TextAttribute commentAttribute = new TextAttribute(new Color(Display.getCurrent(), new RGB(0,128,32)));
     private final TextAttribute parensAttribute = new TextAttribute(new Color(Display.getCurrent(), new RGB(128,0,0)));
+    private final TextAttribute bracketAttribute = new TextAttribute(new Color(Display.getCurrent(), new RGB(128,0,0)));
+    private final TextAttribute bracesAttribute = new TextAttribute(new Color(Display.getCurrent(), new RGB(128,0,0)));
 
     public CvxPresentationReconciler() {
         // TODO logic for syntax colouring
@@ -28,6 +30,8 @@ public class CvxPresentationReconciler extends PresentationReconciler {
         ArrayList<IRule> arr=new ArrayList<>();
         arr.add(new SingleLineRule(";", "", new Token(commentAttribute)));
         arr.add(new MultiLineRule("(", ")", new Token(parensAttribute)));
+        arr.add(new MultiLineRule("[", "]", new Token(bracketAttribute)));
+        arr.add(new MultiLineRule("{", "}", new Token(bracesAttribute)));
         
         IRule[] rules=arr.toArray(new IRule[0]);
         scanner.setRules(rules);
