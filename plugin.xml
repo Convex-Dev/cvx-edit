@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            id="world.convex.cvxedit.cvx"
+            name="world.convex.cvxedit.cvx"
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="cvx">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="world.convex.cvxedit.cvx"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+      <presentationReconciler
+            class="world.convex.cvxedit.CvxPresentationReconciler"
+            contentType="world.convex.cvxedit.cvx">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.hoverProviders">
+      <hoverProvider
+            class="world.convex.cvxedit.CvxHoverProvider"
+            contentType="world.convex.cvxedit.cvx">
+      </hoverProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.contentAssistProcessors">
+      <contentAssistProcessor
+            class="world.convex.cvxedit.CvxContentAssistProcessor"
+            contentType="world.convex.cvxedit.cvx">
+      </contentAssistProcessor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.autoEditStrategies">
+      <autoEditStrategy
+            class="world.convex.cvxedit.CvxAutoEditStrategy"
+            contentType="world.convex.cvxedit.cvx">
+      </autoEditStrategy>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.reconcilers">
+      <reconciler
+            class="world.convex.cvxedit.CvxReconciler"
+            contentType="world.convex.cvxedit.cvx">
+      </reconciler>
+   </extension>
+   <extension
+         point="org.eclipse.core.filebuffers.documentSetup">
+      <participant
+            class="world.convex.cvxedit.ValidatorDocumentSetupParticipant"
+            contentTypeId="world.convex.cvxedit.cvx"
+            extensions="cvx">
+      </participant>
+   </extension>
+
+</plugin>
