@@ -9,8 +9,8 @@ public class CvxAutoEditStrategy implements IAutoEditStrategy {
 	@Override
 	public void customizeDocumentCommand(IDocument document, DocumentCommand command) {
 		if ("(".equals(command.text)) { 
-				command.text += ")" ;
-		}
+			command.text += ")" ;	
+		} 
 		if ("[".equals(command.text)) { 
 			command.text += "]" ;
 		}
